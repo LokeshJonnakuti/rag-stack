@@ -83,7 +83,7 @@ class Falcon7BLLM(LLM):
 
         data = {"prompt": prompt}
 
-        res = requests.post(f"{base_url}:8080/v1/models/model:predict", json=data)
+        res = requests.post(f"{base_url}:8080/v1/models/model:predict", json=data, timeout=60)
 
         res_json = res.json()
         print(res_json)
