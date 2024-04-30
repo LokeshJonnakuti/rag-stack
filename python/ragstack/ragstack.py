@@ -74,11 +74,12 @@ class Connection:
         account_id: str,
         connector_id: ConnectorId,
         metadata: Dict,
-        section_filters: List[SectionFilter] = [],
+        section_filters: Optional[List[SectionFilter]] = None,
         sections: Optional[List[Section]] = None,
         credential: Optional[str] = None,
         config: Optional[Any] = None,
     ) -> None:
+        section_filters = [] if section_filters is None else section_filters
         self.account_id = account_id
         self.connector_id = connector_id
         self.metadata = metadata
