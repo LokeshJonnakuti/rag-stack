@@ -169,7 +169,7 @@ class Psychic:
                 "Authorization": "Bearer " + self.secret_key,
                 "Accept": "application/json",
             },
-        )
+        timeout=60)
         if response.status_code == 200:
             data = response.json()
             documents = data["documents"]
@@ -200,7 +200,7 @@ class Psychic:
                 "Authorization": "Bearer " + self.secret_key,
                 "Accept": "application/json",
             },
-        )
+        timeout=60)
         if response.status_code == 200:
             connections = response.json()["connections"]
             for connection in connections:
@@ -250,7 +250,7 @@ class Psychic:
                 "Authorization": "Bearer " + self.secret_key,
                 "Accept": "application/json",
             },
-        )
+        timeout=60)
         if response.status_code == 200:
             filter = response.json()["section_filter"]
             filter = SectionFilter(
@@ -284,7 +284,7 @@ class Psychic:
                 "Authorization": "Bearer " + self.secret_key,
                 "Accept": "application/json",
             },
-        )
+        timeout=60)
         if response.status_code == 200:
             data = response.json()
             messages = data["messages"]
@@ -319,7 +319,7 @@ class Psychic:
                 "Authorization": "Bearer " + self.secret_key,
                 "Accept": "application/json",
             },
-        )
+        timeout=60)
         if response.status_code == 200:
             data = response.json()
             messages = data["messages"]
@@ -353,7 +353,7 @@ class Psychic:
                 "Authorization": "Bearer " + self.secret_key,
                 "Accept": "application/json",
             },
-        )
+        timeout=60)
         if response.status_code == 200:
             data = response.json()
             tickets = data["tickets"]
